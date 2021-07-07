@@ -1,0 +1,139 @@
+body{
+    background-color: rgb(243, 241, 241);
+    color: #000;
+}
+button{
+    padding: 10px;
+}
+span{
+    color: blue;
+}
+hr{
+    width: 82.5%;
+    margin-left: 5%;
+    margin-top: 40px;
+}
+nav
+{
+    background-color: #fff;
+    color: black;
+}
+
+#first-fluid{
+    background: repeating-linear-gradient(rgb(121, 120, 120), rgb(124, 123, 123) 49.9%, rgb(150, 149, 149) 50.1%, white 100%);
+    border-bottom: 1px solid gray;
+}
+#first-fluid h1{
+    text-align: center;
+}
+#first-fluid h3{
+    margin-left: 12%;
+    font-size: 18px;
+    color: gray;
+}
+.buttons{
+    margin-left: 60%;
+    margin-top: -30%;
+    margin-bottom: -20%;
+    display: inline-flex;
+    border: 1px solid red;
+    /* padding: 5px; */
+}
+
+
+#flex-image{
+    position: relative;
+    
+    /* height: 10%; */
+    /* border: 1px solid red; */
+}
+
+#flex-image img{
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#flex-image-inner{
+    width: 15%;
+      height: 60%;
+      top:50%;
+      margin-right: 40%;
+      /* margin: 0 50; */
+      position: absolute;
+      /* border: 1px solid black; */
+    
+}
+
+#flex-image-inner img{
+    width: 100%;
+    height: 100%;
+    border: 4px solid white;
+    border-radius: 50%;
+    position: relative;
+}
+
+.icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: -30%;
+    margin-left: 60%;
+    background-color: rgb(243, 242, 242);
+    border-radius: 50%;
+    padding-top: 5px;
+    border: 1px solid white;
+}
+
+.icon svg{
+    width: 50px;
+    height: 30px;
+    /* background-color: gray; */
+}
+
+
+#flex-image-inner2{
+    /* border: 1px solid black; */
+    position: relative;
+    height: 30%;
+    width: 20%;
+    top: -15%;
+    margin-right: 10px;
+}
+
+#flex-image-inner2 button{
+    background-color: rgb(243, 242, 242);
+    width: 100%;
+    /* border-radius: 10px; */
+}
+
+#flex-image-inner2 button svg{
+    width: 10%;
+    height: 10%;
+}
+
+#container-2{
+    border: 1px solid gray;
+    /* width: 90%; */
+    background-color: #fff;
+}
+#container-2 input{
+    width: 70%;
+    height: 6vh;
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+}
+#card{
+    border: 1px solid gray;
+    /* background-color: black; */
+    width: 30rem;
+    height: 50%;
+    
+}
+
+#image1{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid white;
+}

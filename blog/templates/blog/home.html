@@ -1,0 +1,228 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+  .scrool{
+    padding: 10px;
+    height: 530px;
+    overflow: hidden;
+  }
+  .scrool:hover{
+    padding: 10px;
+    height: 530px;
+    overflow: hidden;
+    overflow-y: scroll;
+    transform: 0.5s;
+
+  }
+
+  .card{
+    width: 80%;
+  }
+  .dots{
+    margin-left: 90%;
+    position: absolute;
+    margin-top: -10%;
+    font-size: 20px;
+  }
+</style>
+<div class="container-fluid my-3" >
+        <div class="row">
+          <div class="col md-4" id="col">
+          <div class="inner position-fixed  align-items-stretch">
+            <div class="scrool">
+                    <a href="{% url 'profile' %}"><img src="{{user.profile.image.url}}" class="img-fluid mx-2 my-3" id="image1"
+                      alt=""></a>
+                <b> {{user.first_name.capitalize}} {{user.last_name.capitalize}}</b><br>
+                  <img src="{% static 'blog/images/S0U5ECzYUSu.png' %}" class="img-fluid mx-2 my-2" alt="">
+                  <b>Friends</b> <br>
+                  <img src="{% static 'blog/images/PrjLkDYpYbH.png' %}" class="img-fluid mx-2 my-3" alt="">
+                <b> groups</b> <br>
+                  <img src="{% static 'blog/images/duk32h44Y31.png' %}" class="img-fluid mx-2 my-2" alt="">
+                <b> Watch</b> <br>
+                  <img src="{% static 'blog/images/event.png' %}" class="img-fluid mx-2 my-3" alt="">
+                  <b>Events</b> <br>
+                  <img src="{% static 'blog/images/duk32h44Y31.png' %}" class="img-fluid mx-2 my-2" alt="">
+                  <b>Watch</b> <br>
+
+                <b> <svg xmlns="http://www.w3.org/2000/svg" class="img-fluid mx-2 my-3" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                  </svg></b><b> See More</b><br>
+                  <img src="{% static 'blog/images/duk32h44Y31.png' %}" class="img-fluid mx-2 my-2" alt="">
+                  <b>Watch</b> <br>
+                  <img src="{% static 'blog/images/duk32h44Y31.png' %}" class="img-fluid mx-2 my-2" alt="">
+                  <b>Watch</b> <br>
+                  <img src="{% static 'blog/images/duk32h44Y31.png' %}" class="img-fluid mx-2 my-2" alt="">
+                  <b>Watch</b> <br>
+                  <img src="{% static 'blog/images/duk32h44Y31.png' %}" class="img-fluid mx-2 my-2" alt="">
+                  <b>Watch</b> <br>
+                  <img src="{% static 'blog/images/duk32h44Y31.png' %}" class="img-fluid mx-2 my-2" alt="">
+                  <b>Watch</b> <br>
+            
+
+            </div>
+                
+              
+            
+              
+          </div>
+          </div>
+
+          <!-- Grid sections -->
+          <div class="col-7 md-4" id="">
+            <div class="image-sections">
+
+              <!-- image grid1 -->
+              <div class="image-section-contents">
+                <div class="image-section-inner-content">
+                  {% comment %} <img src="{{user.profile.image.url}}" alt=""> {% endcomment %}
+                </div>
+                <img src="{{user.profile.image.url}}" class="img-fluid" alt="">
+              </div>
+
+
+              <!-- image grid2 -->
+              <div class="image-section-contents">
+                <div class="image-section-inner-content">
+                  <img src="{{user.profile.image.url}}" alt="">
+                </div>
+                <img src="{% static 'blog/images/SquareMirror_2018216202412337.jpg' %}" class="img-fluid" alt="">
+              </div>
+
+
+              <!-- image grid3 -->
+              <div class="image-section-contents">
+                <div class="image-section-inner-content">
+                  <img src="{% static 'blog/images/color.jpg' %}" alt="">
+                </div>
+                <img src="{% static 'blog/images/selfiecamera_2018-03-15-11-25-18-990.jpg' %}" class="img-fluid" alt="">
+              </div>
+
+
+              <!-- image grid4 -->
+              <div class="image-section-contents">
+                <div class="image-section-inner-content">
+                  <img src="{% static 'blog/images/color.jpg' %}" alt="">
+                </div>
+                <img src="{% static 'blog/images/SquareMirror_2018110143011603.jpg' %}" class="img-fluid" alt="">
+              </div>
+
+
+              <!-- image grid5 -->
+              <div class="image-section-contents">
+                <div class="image-section-inner-content">
+                  <img src="{% static 'blog/images/color.jpg' %}" alt="">
+                </div>
+                <img src="{% static 'blog/images/Screenshot_2019-02-28-06-59-08.jpg' %}" class="img-fluid" alt="">
+              </div>
+            </div>
+            <!-- end of grids -->
+
+            <div class=" my-5" id="container-2">
+              <div class="card-body">
+                <img src="{{user.profile.image.url}}" class="img-fluid mx-2 my-3" id="image1" alt="">
+                <a href="{% url 'post-create' %}"><input type="text"
+                    placeholder="Whats on your mind {{user.first_name.capitalize}}" class="form"></a>
+                <hr>
+                <div class="containerfluid mx-3">
+                  <i class="bi bi-camera"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="6vh" fill="currentColor"
+                    class="bi bi-camera-video mx-4" viewBox="0 0 16 16" style="color: red;">
+                    <path fill-rule="evenodd"
+                      d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z" />
+
+                  </svg> Live videos
+
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="6vh" fill="currentColor"
+                    class="bi bi-images mx-4" viewBox="0 0 16 16" style="color: green; margin:0px;">
+                    <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                    <path
+                      d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z" />
+                  </svg>Photo/Videos
+
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="6vh" fill="currentColor"
+                    class="bi bi-emoji-smile mx-3" viewBox="0 0 16 16" style="color: yellow;">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                  </svg><a href="{% url 'add' %}" style="text-decoration: none; color:black"> Feelings/Activivties </a>
+                </div>
+              </div>
+            </div>
+            {% for post in posts%}
+            <div class="card mb-3 mx-3 " >
+              <div class="card-header" id="card-header ">
+                <img src="{{post.author.profile.image.url}}" class="img-fluid mx-2 my-3" id="image1" alt="">
+                <a href="{% url 'post-detail' post.id %}" style=" text-decoration:none"> {{ post.author}} </a> 
+                <div class="dots">
+                  <h3><a href="{% url 'user-posts' post.author.username %}"  style="text-decoration: none;">...</a></h3>
+                </div> 
+                <p> {{post.dateposted|timesince}} ago</p>
+              </div>
+              <div class="card-body ">
+                <!-- <h5 class="card-title" >Special card treatment</h5> -->
+                {{post.content.capitalize}} <br>
+                {%if post.picture%}
+                  <img src="{{post.picture.url}}" width="100%" height="400px"><hr>
+                  <form action="blog:like-post-view" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="post_id" value="{{post.id}}">
+                    <button class="btn btn-primary" type="submit ">Like</button>
+                  </form>
+
+                {% endif %}
+
+
+              </div>
+            </div>
+            {% endfor %}
+            {%for image in pictures %}
+                    
+            <img src="/media/{{image.picture}}" alt="">
+
+        {% endfor %}
+
+            
+
+
+          <!-- pagginating -->
+            {% if is_paginated %}
+
+            {% if page_obj.has_previous %}
+            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+            <a class="btn btn-outline-info mb-4" href="?{{page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <a class="btn btn-outline-info mb-4"
+              href="?page={{ num }}">{{ num }}</a>
+              {% endif %}
+              {% endfor %}
+
+              {% if page_obj.has_next %}
+              <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+              <a class="btn btn-outline-info mb-4" href="?{{page_obj.paginator.num_pages }}">Last</a>
+              {% endif %}
+
+              {% endif %}
+
+
+
+          </div>
+
+          <div class="col md-4 position-static">
+            <div class="inner position-fixed  align-items-stretch">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore dolore molestias corrupti. Dicta quasi
+                  ratione
+                  maxime odio vel vitae quia inventore .</p>
+              </div>
+      </div>  
+
+
+
+    {% endblock content %}

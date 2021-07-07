@@ -1,0 +1,59 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My project-register</title>
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/bootstrap.css' %}"> -->
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        .my-container
+        {
+            width: 60%;
+            padding: 20px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            margin-top: 3%;
+        }
+        h1{
+            text-align: center;
+        }
+        small,li{
+            display:none
+        }
+        button{
+            margin-top:15px;
+        }
+    </style>
+
+<!-- </head> -->
+<body>
+
+  
+<div class="container my-container"> 
+    <h2>hey {{user.username}} been loggedout</h2>
+    <div class="border-top pt-3">
+        <div class="text-muted"> 
+            <a class="ml-2" href="{% url 'login' %}"><button class="btn btn-outline-primary" type="submit">Log In here</button></a>
+        </div>
+    </div>
+</div>        
+      
+      
+
+
+
+
+{% endblock content %}
+    
+<!-- </body>
+</html> -->

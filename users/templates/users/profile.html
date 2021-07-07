@@ -1,0 +1,167 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+
+<div class="container-fluid" id="first-fluid">
+
+  <div class="container">
+    <!-- coverphotos and profile -->
+        <div class="d-flex align-items-end flex-column  mb-5 mx-5 bg-danger" style="height: 300px; width:90%" id="flex-image">
+          <img src="{% static 'blog/images/gggg.jpg' %}" class="img-fluid" alt="" style="width: 100%; height:100%">
+          <div class="" id="flex-image-inner" style="margin-left:-40%">
+                <img src="{{user.profile.image.url}}" class="img-fluid" alt="">
+                <!-- icon -->
+                <div class="icon">
+                  <a href="{% url 'u_profile' %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
+                    <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+                    <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                  </svg></a>
+                </div>
+                <!-- endicon -->
+          </div>
+          <div class="" id="flex-image-inner2">
+            <button class="btn btn-1">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
+                <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+                <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+              </svg> <b>Edit Cover Photo</b>
+
+            </button>
+          </div>
+        </div>
+    </div>
+    <!-- end coverphotos and profile -->
+
+
+    <!-- second stages -->
+    <div class="container">
+      <h1>{{user.first_name.capitalize}} {{user.last_name.capitalize}}</h1><hr>
+      <div class="row">
+
+        <div class="col-8">
+          
+          <h3><span><a href="" style="text-decoration: none;"> Post <small>(12)</small></a></span>  &nbsp;&nbsp; About &nbsp;&nbsp;Friends <small>({{profile.get_friends_no}})</small> &nbsp;&nbsp; Photos &nbsp;&nbsp;More</h3>
+      </div>
+        <div class="col">
+            <button class="btn btn-secondary btn-sm mx-2" >
+              <!-- pencil icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+              </svg>
+              <a href="{% url 'edit_profile' %}" style=" text-decoration: none; color:white"> Edit Profile </a>
+            </button>
+            <button class="btn btn-secondary btn-sm mx-2">
+              <!-- eye icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+              </svg>
+
+            </button>
+            <button class="btn btn-secondary btn-sm mx-2">
+              <!-- search icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+
+            </button>
+            <button class=" btn btn-secondary btn-sm">...</button>
+        </div>
+    </div>
+    <br>
+  </div>
+</div>
+<!-- end of second stage -->
+
+<div class="container my-3">
+  <div class="row">
+        <div class="col-5">
+          
+
+          <div class="card" style="width:26rem">
+            
+          <div class="card-body">
+              <!-- <h5 class="class-title">Intro</h5> -->
+              <p class="card-text">
+                <table class="ui table">
+                  <tbody>
+                    <tr>
+                      <td><b> First name </b></td>
+                      <td><b> {{user.first_name.capitalize}}</b></td>
+
+                    </tr>
+
+                    <tr>
+                      <td><b> Last name</b></td>
+                      <td><b> {{user.last_name.capitalize}}</b></td>
+
+                    </tr>
+
+                    <tr>
+                      <td><b> User name</b></td>
+                      <td><b> {{user.username.capitalize}}</b></td>
+
+                    </tr>
+
+                    <tr>
+                      <td><b> Email</b></td>
+                      <td><b> {{user.email}}</b></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+               
+                
+          </div>  
+        </div>
+     </div>
+  <div class="col-7">
+    
+
+    
+ 
+    
+    <div  id="container-2">
+      <div class="card-body">
+            <img src="{{user.profile.image.url}}" class="img-fluid mx-2 my-3" id="image1" alt="">
+            <a href="{% url 'post-create' %}"><input type="text"
+              placeholder="Whats on your mind {{user.first_name.capitalize}}" class="form"></a>
+            <hr>
+          <div class="containerfluid mx-3">
+            <i class="bi bi-camera"></i> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="6vh" fill="currentColor" class="bi bi-camera-video mx-2" viewBox="0 0 16 16" style="color: red;">
+              <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"/>
+              
+            </svg> Live videos
+
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="6vh" fill="currentColor" class="bi bi-images mx-2" viewBox="0 0 16 16" style="color: green; margin:0px;">
+              <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+              <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+            </svg>Photo/Videos
+
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="6vh" fill="currentColor" class="bi bi-emoji-smile mx-2" viewBox="0 0 16 16" style="color: yellow;">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+            </svg>Feelings/Activivties
+        </div>
+      </div>
+    </div>
+      
+
+  </div>
+
+  
+</div>
+
+
+{% endblock content %}
+
+
+
